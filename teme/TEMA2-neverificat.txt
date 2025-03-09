@@ -1,0 +1,524 @@
+TEMA DIN VAR BAC
+
+2025.
+
+1.Indicați intervalul căruia îi aparține valoarea variabilei reale x, dacă și numai dacă expresia C/C++ de mai
+jos are valoarea 1.
+!(x<2004) && !(x<2005 || x>2024) && !(x>2025)
+c. [2005,2024]
+
+
+3.Variabila s poate accesa un șir de cel mult 20 de caractere, variabila aux este de tip char, iar celelalte variabile sunt de tip întreg.
+Indicați șirul accesat prin intermediul variabilei s
+în urma executării secvenței alăturate. (6p.)                                                  "0 1 2 3 4 5 6"
+                                                                                      strcpy(s,"R O M A N I A"); -> 7 litere 
+                                                                                       i=strlen(s)-1; j=3; -> i=6 j=3
+                                                                                      while(j>=0) -> 3>=0 (A)
+                                                                                        { aux=s[i]; -> aux = A  
+                                                                                           s[i]=s[i-j]; s[6]=s[3] -> A=A -> S[3]=S[1] -> A=O -> s[1]=s[0] -> A=R
+                                                                                           s[i-j]=aux;-> s[1]=aux s[0]=aux -> ROMANIA -> RAMONIA -> ARMONIA
+                                                                                           i=i-j; -> i=3 i=1
+                                                                                           j=j-1; -> j=2 j=1
+Sb II                                                                                         }
+1. S-a notat cu a%b restul împărțirii numărului natural a la
+numărul natural nenul b.
+
+a. Scrieți valoarea afișată în urma executării algoritmului, dacă se
+citesc, în această ordine, numerele 15, 3, 4. SE AFISEAZA 6
+c.
+#include <iostream>
+
+using namespace std;            
+
+int main() {                                 
+    int n, x, y, nr = 0;                        
+      cin >> n >> x >> y;            
+    for (int i = n; i >= 1; --i) {    
+        if (i % x == 0 && i % y != 0)    
+       {                              
+            nr++;     
+        }                         
+        else if (i % x != 0 && i % y == 0)
+        {
+            nr++;
+        }
+    }
+        cout << nr << endl;
+    return 0;
+}
+
+n=15 x=3 y=4                nr=6 pt 15,9,8,6,4,3
+b. Scrieți două seturi distincte de date de intrare, astfel încât, în
+urma executării algoritmului, pentru fiecare dintre acestea să
+se afișeze valoarea 0.
+
+1. n=5 x=2 y=4 
+2. n=8 x=3 y=6 
+nr tr sa fie div si cu x si cu y sa afiseze 0
+
+Sesiunea august – 21 august 2024
+
+1.Variabilele x și y memorează câte un număr natural (x≤y). Indicați expresia C/C++ cu valoarea 1 dacă și
+numai dacă intervalul [x,y] NU conține niciun număr de două cifre.
+b. !(x<=99 && y>=10)
+
+3.Variabilele s, x și y permit memorarea câte unui șir de cel mult 15 caractere. Indicați șirul accesat prin variabila s în urma executării secvenței alăturate.
+   strcpy(x,"soare");     s>p
+   strcpy(y,"ploaie");
+   if (strcmp(x,y)>0) 
+               strcpy(s,x+1);
+   else 
+              strcpy(s,y+2);
+a. oare
+
+sb II 
+S-a notat cu a%b restul împărțirii numărului natural a la numărul natural nenul b și cu [c] partea întreagă a numărului real c. 
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, x = -1, y = -1;
+    cin >> n; 
+    while (n > 9) {
+        if (x == -1)
+            x = n % 100;  
+        else
+            y = n % 100;  
+
+        n /= 10;      }
+    if (x < y)
+        n = (n * 100 + x) * 100 + y;
+    else
+        n = (n * 100 + y) * 100 + x;
+
+    cout << n << endl;  
+
+    return 0;
+}
+ 
+a. Scrieți valoarea afișată în urma executării algoritmului
+dacă se citește numărul 412531.
+ n=412531
+ x=31
+n=41253 
+y=53
+n=4125 -> 41253153
+
+b. Scrieți două numere din intervalul [1,11110] care pot fi
+citite pentru variabila n, astfel încât, pentru fiecare
+dintre acestea, în urma executării algoritmului, să se
+afişeze valoarea 11111. 
+
+x=11 y=10 n= 11110
+
+Sesiunea iunie-iulie – 4 iulie 2024
+
+1. Indicați expresia C/C++ care are valoarea 1 dacă și numai dacă numerele memorate în variabilele întregi
+x și y sunt pare.
+a. x%2==0 && (y+1)%2!=0
+
+SUBIECTUL al II-lea 
+1. S-a notat cu [c] partea întreagă a numărului real c. 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, p = 1;
+    cin >> n;  
+    for (int i = 1; i <= n; ++i) {
+        int x;
+        cin >> x;  
+        while (x > 3) {
+            x /= 3;          }
+        if (x != 0) {
+            p *= x;          }
+    }
+
+    cout << p << endl;  
+    return 0;
+}
+
+a. Scrieți valoarea afișată dacă se citesc, în această ordine, numerele
+5, 15, 27, 10, 1, 17.
+
+x=15>3
+x=5->1  p=1
+x=27 p=1 
+x=10 p=1
+x=1 p=1
+x=17 p=1   p=5
+b. Dacă pentru n se citește valoarea 2, scrieți un set de numere distincte
+din intervalul [0,103] care pot fi citite în continuare, astfel încât, în urma
+executării algoritmului, să se afișeze valoarea 4. 
+
+1 si 9
+
+Sesiunea specială – 21 mai 2024
+
+1. Variabilele x şi y sunt de tip real. Indicați o expresie C/C++ echivalentă
+cu cea alăturată. 
+!(x>25 || y<6) -> x<=25 && y>=6 (a. x<=25 && y>=6)
+
+S-a notat cu a%b restul împărţirii numărului natural a la numărul natural
+nenul b şi cu [c] partea întreagă a numărului real c.
+a. Scrieţi ce se afișează dacă se citeşte numărul 10.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n; 
+    int i = 1; 
+    while (i <= n) {
+        int m = i; 
+        while (m % 2 == 0) {
+            m = m / 2;
+        }
+        if (m != i) {
+            cout << m << " ";
+        }
+        
+        i = i + 1;
+    }
+
+    return 0;
+}
+
+n=10 113115
+
+b. Scrieţi două valori distincte care pot fi citite astfel încât, în urma
+executării algoritmului, pentru fiecare dintre acestea, numărul de valori
+egale cu 1 afișate să fie 4. 
+ 15 16
+
+Simulare – 6 martie 2024
+
+1. Indicați valoarea expresiei C/C++ alăturate. 6.3/20+24
+c. 24.315
+
+2.S-a notat cu a%b restul împărțirii numărului natural a la numărul natural
+nenul b și cu [c] partea întreagă a numărului real c. 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, s = 0, d = 2;
+    cin >> n;
+    while (d * d <= n) {
+        int p = 0;  
+        while (n % d == 0) {
+            n /= d;
+            p = 1;  
+        }
+        s += d * p;
+        d++;
+    }
+    if (n != 1) {
+        s += n;
+    }
+
+    cout <<s << endl;
+
+    return 0;
+}
+
+a. Scrieți valoarea afișată în urma executării algoritmului dacă se citește
+numărul 32625
+n=32625 ????????????
+
+Modele de subiecte – noiembrie 2023
+
+1. Variabila x este de tip întreg și poate memora un număr natural din intervalul
+[0,109). Indicați valoarea maximă pe care o poate avea expresia C/C++ alăturată.
+x%2024->2023 
+sb II 
+a. Scrieți ce se afișează dacă se citesc, în această ordine, numerele 4, 721, 20020, 1321, 211.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m = 0, i;
+    cin >> n;
+    i = n; 
+    while (i >= 1) {
+        int x;
+        cin >> x;
+        while (x % 10 <= (x / 10) % 10 && x >= 10) {
+            x /= 10; 
+        }
+        m += x;
+        i--;
+    }
+    if (m != n) {
+        cout << m << endl;
+    } else {
+        cout << "egal" << endl;
+    }
+
+    return 0;
+}
+
+i=n=4 x=721,20020,1321,211 
+pt 721 -> 1<2 si 721>10
+m=7+2002+13+2=2024
+b. Dacă primul număr citit este 2, scrieți un set de
+numere distincte din intervalul [10,104] care pot fi
+citite în continuare astfel încât, în urma executării
+algoritmului, să se afișeze mesajul egal.
+pentru 10 si 11
+
+Sesiunea august – 18 august 2023
+
+1. Indicați numerele pe care le pot memora variabilele întregi x și y, astfel
+încât valoarea expresiei C/C++ alăturate să fie 1.
+y%x–(x/y)*3!=0
+b. x=25 și y=15
+2.Variabila s poate accesa un șir cu cel mult 20 de caractere. Indicați
+șirul accesat prin s în urma executării secvenței alăturate.
+strcpy(s,"2019");
+strcpy(s+3,"23");
+a. 20123
+sb II
+a. Scrieți valoarea afișată dacă se citesc, în această ordine,
+numerele 3, 746, 82, 3067, 67, 78, 178.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x = 0;
+    cin >> n;
+    while (n > 0) {
+        int a, b, c, p = 1;
+        cin >> a >> b;
+        c = a;  
+        while (a > 9) {
+            a = a / 10;
+            p = p * 10;
+        }
+        a = a * p + b;
+        if (a != c) {
+            x++;
+        }
+        n--;  
+    }
+    cout << x << endl;
+
+    return 0;
+}
+
+a=746 b=82 p=1
+c=a
+746>9
+a=74 p=10 -> a=7 p=100 
+a=7*100+82=782 se afiseaza 1+1=2
+
+Sesiunea iunie-iulie – 28 iunie 2023
+
+1. Indicați expresia C/C++ care are cea mai mare valoare, comparativ cu celelalte trei expresii.
+ d. (20*23)/2*2
+
+3. Variabila k este de tip întreg, iar variabila s permite memorarea unui șir de maximum 50 de caractere. Indicați valoarea variabilei k în urma
+executării secvenței alăturate.
+strcpy(s,"bac2023");
+s[s[2]-'a']='\0';
+k=strlen(s);
+este 2
+
+sb II 
+a. Scrieţi valoarea afişată dacă se citește numărul 6907512
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, p = 1, m = -1;
+    cin >> x;
+    while (p <= x) {
+        int c = (x / p) % 10; 
+        if (c > m) { 
+            m = c;
+            p *= 10; 
+        } else {
+            x = (x / (p * 10)) * p + (x % p);         }
+    }
+    if (m >= 0)
+        cout << x;    
+      else
+        cout << "nul"; 
+    return 0;
+}
+1<6907512
+c=2 p=10 m=2
+c=1 x=690752
+c=2 p=100 m=2 ????
+
+Sesiunea specială – mai 2023
+
+Variabilele întregi m și n memorează câte un număr natural. Indicați expresia C/C++ care are valoarea 1 dacă și numai dacă fiecare dintre numerele memorate în variabilele m și n este par.
+c. m%2+n%2==0
+
+sb II 
+a. Scrieți ce se afișează în urma executării algoritmului, dacă se citește
+numărul 3.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;  
+    for (int i = 1; i <= n; i++)
+     {  
+        for (int j = 1; j <= n; j++)
+          {  
+            if (j <= i)
+                cout << "2";  
+            else
+                cout << "3";  
+        }
+        cout << endl;  
+    }
+
+    return 0;
+}
+
+2 3 3 
+2 2 3
+2 2 2
+b??
+
+Simulare – 29 martie 2023
+
+ndicați numerele pe care le pot memora variabilele întregi x şi y, astfel încât
+valoarea expresiei C/C++ alăturate să fie 23.      x/2+y%3
+d. x=43 şi y=20
+
+sb II 
+a. Scrieţi valoarea afişată dacă se citește numărul 5174.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;  
+    int x = 5; 
+   do {
+        int cn = n, p = 1;
+        n = 0;  
+        do {
+            int c = cn % 10;  
+            if (c == x)    
+                c = 5 - c;   
+            n = c * p + n;  
+            cn /= 10;   
+            p *= 10;     
+        } while (cn != 0);
+        x--; 
+    } while (x != 0);
+    cout << n; 
+    return 0;
+} ???
+
+Modele de subiecte – noiembrie 2022
+
+1. Indicați două valori pe care le poate avea variabila întreagă x, astfel încât, pentru
+fiecare dintre acestea, expresia C/C++ alăturată să aibă valoarea 1.
+x%20==x/23
+b. {20,41} 
+
+sb II 
+
+a) Scrieţi valoarea afişată dacă se citesc, în această ordine,
+numerele 4, 3, 11 și 25. 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m, n, p, q, s = 0;
+    cin >> m >> n >> p >> q; 
+    for (int x = p; x <= q; x++) {
+        if (x % m == 0 || x % n == 0) 
+            s += x;
+        if (x % m == 0 && x % n == 0) 
+            s -= x;
+    }
+    cout << s;  
+    return 0;
+}
+
+m=4 n=3 p=11 q=25
+15+16+20+21=72
+
+b) Dacă pentru m, n și p se citesc numerele 10, 15, respectiv
+2, scrieţi două numere care pot fi citite pentru q astfel încât,
+în urma executării algoritmului, pentru fiecare dintre
+acestea, valoarea afişată să fie 250. 
+m=10 n=15 p=2 
+10+15+20+30-30+40+45+50+60-60=250
+q=60
+
+Variabila p este de tip întreg, iar variabilele s1 şi s2 permit memorarea câte unui șir de cel mult 30 de caractere. Scrieți ce se afișează în urma executării secvenței alăturate. 
+strcpy(s1, "plantau fistic");
+p=strchr(s1,' ')-s1;
+strcpy(s2,s1+p+1); strcpy(s1+p-1,s2+2);
+strcpy(s2+1,s1+2);
+cout<<p<<s2; | printf("%d%s",p,s2);
+?????
+
+Sesiunea august-septembrie – 18 august 2022
+
+1. Variabila x este de tip întreg. Indicați o expresie care are valoarea 1 dacă și
+numai dacă expresia C/C++ alăturată are valoarea 1.
+x>=3 && x<10
+b. !(x<3 || x>=10)
+
+sb II 
+
+a. Scrieţi ce se afișează în urma executării algoritmului dacă se citesc,
+în această ordine, valorile 21 și 47
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m, n;
+    cin >> m >> n;  
+    int x = 1;
+    while (x == 1) {  
+        x = m;
+        int y = n;
+        n = n - 1;
+        while (x != y) {  
+            if (x > y)
+                x = x - y;
+            else
+                y = y - x;
+        }
+    }
+
+    cout << n + 1;  
+    return 0;
+}
+m=21    n=46
+x=21   y=47 
+x=16       y=26
+x=11   y=5
+x=6
+x=1          y=4,3,2,1
+cout<<46+1=47
+
+b. Dacă pentru variabila m se citeşte numărul 5, scrieţi două valori care pot
+fi citite pentru variabila n astfel încât, în urma executării algoritmului,
+pentru fiecare dintre acestea, valoarea afişată să fie 10. 
+???
+
+Sesiunea iunie – 22 iunie 2022
+
+a.Indicați valoarea expresiei C/C++ alăturate. 22/20*20/2
+  c. 10 
+
+
